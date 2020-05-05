@@ -1,5 +1,9 @@
 # Exemplo de extração de entidades de página do Arquivo.pt
 
+## Download 
+
+https://github.com/arquivo/demo-extrair-entidades/archive/master.zip
+
 ## Instalar
 
 Instalar python 3 e pip 
