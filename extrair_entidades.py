@@ -17,5 +17,5 @@ for entity in doc.ents:
 
 for label in entities:
     print(spacy.explain(label) + ": ")
-    print(", ".join(entities[label]))
+    print("; ".join(entities[label]))
     print()
