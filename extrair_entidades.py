@@ -1,5 +1,6 @@
 import spacy
 import requests
+from collections import defaultdict
 
 nlp = spacy.load("pt_core_news_sm")
 
@@ -8,12 +9,9 @@ r.encoding = "utf-8"
 document = r.text
 doc = nlp(document)
 
-entities = {}
+entities = defaultdict(set)
 for entity in doc.ents:
-    if not entity.label_ in entities:
-        entities[entity.label_] = []
-    if not entity.text in entities[entity.label_]:
-        entities[entity.label_].append(entity.text)
+    entities[entity.label_].add(entity.text)
 
 for label in entities:
     print(spacy.explain(label) + ": ")
